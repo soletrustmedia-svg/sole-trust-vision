@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring, 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowUpRight, ArrowRight, Sparkles, Palette, Camera, Megaphone,
-  TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube,
+  TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import work1 from "@/assets/work-1.jpg";
