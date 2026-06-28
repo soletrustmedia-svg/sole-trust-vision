@@ -497,9 +497,15 @@ function Process() {
 /* ───────── featured work ───────── */
 
 const WORK = [
-  { img: work1, title: "Halcyon Studio", tags: ["Branding", "Web"], overview: "Identity & site for a boutique creative studio.", challenge: "Differentiating in a saturated design market.", solution: "A monochrome system with editorial typography.", results: "+220% inbound leads in 90 days." },
-  { img: work2, title: "Vermilion No. 7", tags: ["Packaging", "Commerce"], overview: "DTC fragrance launch from zero to one.", challenge: "Launch a premium brand with no existing audience.", solution: "Cinematic packaging + paid social engine.", results: "$1.2M revenue in first quarter." },
-  { img: work3, title: "Nova / Live Tour", tags: ["Music", "Marketing"], overview: "Tour rollout & artist marketing for Nova.", challenge: "Sell out 14 venues in 6 weeks.", solution: "Story-led short-form content + retargeting.", results: "All shows sold out. 38M views." },
+  {
+    img: "https://image.thum.io/get/width/1200/crop/800/noanimate/https://lumi-glow0.waseemraza01423.workers.dev/",
+    title: "Lumora Beauty",
+    tags: ["Website", "E-commerce", "Marketing"],
+    overview: "Beauty brand transformation with a digital-first strategy and modern web presence.",
+    challenge: "Low sales due to less presence on internet.",
+    solution: "Website redesign, agentic calls, and digital outreach systems.",
+    results: "+110% sales and traffic flow.",
+  },
 ];
 
 function Work() {
