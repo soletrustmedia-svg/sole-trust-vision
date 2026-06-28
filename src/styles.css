@@ -46,40 +46,42 @@
 
 :root {
   --radius: 1rem;
-  /* Dark luxury palette */
-  --background: oklch(0.145 0 0);          /* #0A0A0A */
-  --foreground: oklch(1 0 0);              /* #FFFFFF */
-  --surface: oklch(0.18 0 0);              /* #111111 */
-  --surface-elevated: oklch(0.215 0 0);    /* ~#1A1A1A */
-  --card: oklch(0.18 0 0);
+  /* Deep navy luxury palette — derived from Sole Trust Media logo */
+  --background: oklch(0.16 0.035 265);     /* deep navy near-black */
+  --foreground: oklch(1 0 0);
+  --surface: oklch(0.22 0.045 265);        /* elevated navy surface */
+  --surface-elevated: oklch(0.27 0.05 265);
+  --card: oklch(0.22 0.045 265);
   --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.18 0 0);
+  --popover: oklch(0.22 0.045 265);
   --popover-foreground: oklch(1 0 0);
-  --primary: oklch(0.82 0.09 80);          /* #DEBD87 accent gold */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.22 0 0);
+  --primary: oklch(0.70 0.13 245);         /* signature navy-blue accent */
+  --primary-foreground: oklch(0.16 0.035 265);
+  --secondary: oklch(0.28 0.05 265);
   --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.215 0 0);
-  --muted-foreground: oklch(0.72 0.01 280); /* #A1A1AA */
-  --accent: oklch(0.82 0.09 80);
-  --accent-foreground: oklch(0.145 0 0);
-  --gold: oklch(0.82 0.09 80);             /* #DEBD87 */
-  --gold-light: oklch(0.92 0.07 90);       /* #F4E3B2 */
+  --muted: oklch(0.27 0.05 265);
+  --muted-foreground: oklch(0.74 0.025 250);
+  --accent: oklch(0.70 0.13 245);
+  --accent-foreground: oklch(0.16 0.035 265);
+  --gold: oklch(0.70 0.13 245);            /* re-mapped: navy-blue accent */
+  --gold-light: oklch(0.85 0.09 235);      /* light sky highlight */
   --destructive: oklch(0.65 0.22 27);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.28 0 0);               /* #222222 */
-  --input: oklch(0.28 0 0);
-  --ring: oklch(0.82 0.09 80);
+  --border: oklch(0.33 0.055 265);
+  --input: oklch(0.33 0.055 265);
+  --ring: oklch(0.70 0.13 245);
 
-  --gradient-gold: linear-gradient(135deg, #DEBD87 0%, #F4E3B2 100%);
-  --gradient-radial-gold: radial-gradient(60% 60% at 50% 0%, color-mix(in oklab, #DEBD87 18%, transparent), transparent 70%);
-  --gradient-text-gold: linear-gradient(120deg, #F4E3B2 0%, #DEBD87 40%, #F4E3B2 100%);
+  --gradient-gold: linear-gradient(135deg, #1E3A5F 0%, #3B6FA0 50%, #7BB2E0 100%);
+  --gradient-radial-gold: radial-gradient(60% 60% at 50% 0%, color-mix(in oklab, #3B6FA0 22%, transparent), transparent 70%);
+  --gradient-text-gold: linear-gradient(120deg, #BFD8F2 0%, #5C8FBF 45%, #BFD8F2 100%);
 }
+
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.16 0.035 265);
   --foreground: oklch(1 0 0);
 }
+
 
 @layer base {
   * {
@@ -103,9 +105,10 @@
     font-weight: 600;
   }
   ::selection {
-    background: color-mix(in oklab, #DEBD87 60%, transparent);
-    color: #0A0A0A;
+    background: color-mix(in oklab, #3B6FA0 65%, transparent);
+    color: #FFFFFF;
   }
+
 }
 
 @utility text-gradient-gold {
@@ -165,7 +168,7 @@
   100% { background-position: 200% 0; }
 }
 @utility shimmer-text {
-  background: linear-gradient(90deg, #DEBD87 0%, #F4E3B2 50%, #DEBD87 100%);
+  background: linear-gradient(90deg, #5C8FBF 0%, #BFD8F2 50%, #5C8FBF 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
