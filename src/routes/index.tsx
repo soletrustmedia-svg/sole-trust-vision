@@ -104,6 +104,7 @@ function Nav() {
     { label: "Services", href: "#services" },
     { label: "Ecosystem", href: "#ecosystem" },
     { label: "Work", href: "#work" },
+    { label: "Clients", href: "#clients" },
     { label: "Process", href: "#process" },
     { label: "Insights", href: "#insights" },
   ];
