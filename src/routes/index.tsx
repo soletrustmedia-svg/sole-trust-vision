@@ -132,7 +132,7 @@ function Nav() {
               </a>
             ))}
           </nav>
-          <MagneticButton href="#contact" className="!py-2 !px-4 !text-xs">Book a call</MagneticButton>
+          <MagneticButton href="https://cal.com/sole-trust-5klivz/demo-meet" className="!py-2 !px-4 !text-xs">Book a call</MagneticButton>
         </div>
       </div>
     </motion.header>
@@ -185,7 +185,7 @@ function Hero() {
 
         <Reveal delay={0.4}>
           <div className="mt-12 flex flex-wrap items-center gap-4">
-            <MagneticButton href="#contact">Book discovery call</MagneticButton>
+            <MagneticButton href="https://cal.com/sole-trust-5klivz/demo-meet">Book discovery call</MagneticButton>
             <MagneticButton href="#work" variant="ghost">View our work</MagneticButton>
           </div>
         </Reveal>
@@ -771,7 +771,7 @@ function CTA() {
               a partner, and a path forward.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-4">
-              <MagneticButton href="mailto:hello@soletrust.media">Let's talk</MagneticButton>
+              <MagneticButton href="https://cal.com/sole-trust-5klivz/demo-meet">Let's talk</MagneticButton>
               <MagneticButton href="#work" variant="ghost">See the work</MagneticButton>
             </div>
           </div>
