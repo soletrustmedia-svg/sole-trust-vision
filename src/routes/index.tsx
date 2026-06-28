@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring, 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowUpRight, ArrowRight, Sparkles, Palette, Camera, Megaphone,
-  TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube,
+  TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import work1 from "@/assets/work-1.jpg";
@@ -104,6 +104,7 @@ function Nav() {
     { label: "Services", href: "#services" },
     { label: "Ecosystem", href: "#ecosystem" },
     { label: "Work", href: "#work" },
+    { label: "Clients", href: "#clients" },
     { label: "Process", href: "#process" },
     { label: "Insights", href: "#insights" },
   ];
@@ -555,7 +556,112 @@ function Work() {
   );
 }
 
+/* ───────── clients ───────── */
+
+const CLIENTS = [
+  {
+    name: "Nina's Beauty Hub",
+    category: "Beauty & Wellness",
+    description: "Premium beauty brand experience with elegant product storytelling.",
+    url: "https://nina-s-beauty-hub.vercel.app/",
+  },
+  {
+    name: "Farmlytics",
+    category: "AgriTech SaaS",
+    description: "Data-driven analytics platform empowering modern farmers.",
+    url: "https://farmlytics-three.vercel.app/",
+  },
+  {
+    name: "ChainMind AI",
+    category: "AI & Blockchain",
+    description: "Next-gen AI intelligence layer for decentralized ecosystems.",
+    url: "https://chainmind-ai-ten.vercel.app/",
+  },
+  {
+    name: "Asha Tiffin",
+    category: "Food & Hospitality",
+    description: "Authentic home-style tiffin service rooted in Bengaluru.",
+    url: "https://asha-tiffin-bengaluru.vercel.app/",
+  },
+  {
+    name: "Psychology with Mitali",
+    category: "Mental Health",
+    description: "A warm, trust-led digital home for a leading psychologist.",
+    url: "https://psychologywithmitali.vercel.app/",
+  },
+];
+
+const shot = (url: string) =>
+  `https://image.thum.io/get/width/1200/crop/800/noanimate/${url}`;
+
+function Clients() {
+  return (
+    <section id="clients" className="relative border-t border-border py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
+      />
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-end justify-between gap-6">
+          <Reveal>
+            <SectionLabel>Clients</SectionLabel>
+            <h2 className="mt-6 max-w-3xl text-5xl font-medium leading-[1] tracking-tight md:text-7xl">
+              Brands we've <span className="italic font-light text-gradient-gold">shipped.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-muted-foreground">
+              Live products built end-to-end with our partners — from first sketch to launch day.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
+          {CLIENTS.map((c, i) => (
+            <Reveal key={c.name} delay={i * 0.06}>
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block overflow-hidden rounded-3xl border border-border bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_30px_80px_-20px_rgba(222,189,135,0.25)]"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-background">
+                  <img
+                    src={shot(c.url)}
+                    alt={`${c.name} — live website preview`}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent opacity-90" />
+                  <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/60 backdrop-blur-md transition-all duration-500 group-hover:border-gold/60 group-hover:bg-gold group-hover:text-background">
+                    <ExternalLink className="h-4 w-4" />
+                  </div>
+                </div>
+                <div className="flex items-end justify-between gap-6 p-8">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.22em] text-gold">
+                      {c.category}
+                    </span>
+                    <h3 className="mt-3 text-2xl font-medium tracking-tight md:text-3xl">
+                      {c.name}
+                    </h3>
+                    <p className="mt-2 max-w-sm text-sm text-muted-foreground">
+                      {c.description}
+                    </p>
+                  </div>
+                  <span className="hidden shrink-0 items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-gold sm:inline-flex">
+                    Visit <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ───────── testimonials ───────── */
+
 
 const TESTIMONIALS = [
   { quote: "Sole Trust didn't just rebuild our brand — they reset our trajectory. The team operates like a co-founder, not a vendor.", name: "Maya Okafor", role: "CEO, Halcyon", company: "HALCYON" },
@@ -739,6 +845,7 @@ function Home() {
         <WhyUs />
         <Process />
         <Work />
+        <Clients />
         <Testimonials />
         <Insights />
         <CTA />
