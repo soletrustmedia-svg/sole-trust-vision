@@ -9,6 +9,8 @@ import heroBg from "@/assets/hero-bg.jpg";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
+import stmLogo from "@/assets/stm-logo.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,7 +123,8 @@ function Nav() {
           scrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)]" : "bg-transparent"
         }`}>
           <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-gold text-[11px] font-bold text-primary-foreground">S</span>
+            <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-border"><img src={stmLogo.url} alt="Sole Trust Media" className="h-full w-full object-cover scale-[1.8] translate-x-[-2px]" /></span>
+
             <span>Sole Trust <span className="text-muted-foreground">Media</span></span>
           </a>
           <nav className="hidden items-center gap-1 md:flex">
@@ -788,7 +791,7 @@ function Footer() {
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <div className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-gold text-[11px] font-bold text-primary-foreground">S</span>
+              <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-border"><img src={stmLogo.url} alt="Sole Trust Media" className="h-full w-full object-cover scale-[1.8] translate-x-[-2px]" /></span>
               Sole Trust Media
             </div>
             <h3 className="mt-8 max-w-xl font-display text-4xl font-medium leading-[1] tracking-tight md:text-6xl">
