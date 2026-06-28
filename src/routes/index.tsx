@@ -845,6 +845,7 @@ function Home() {
         <WhyUs />
         <Process />
         <Work />
+        <Clients />
         <Testimonials />
         <Insights />
         <CTA />
