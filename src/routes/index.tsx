@@ -264,7 +264,7 @@ function About() {
 
 /* ───────── stats ───────── */
 
-function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
+function Counter({ to, suffix = "", prefix = "" }: { to: number; suffix?: string; prefix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [val, setVal] = useState(0);
@@ -280,7 +280,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
     v >= 1_000_000 ? (v / 1_000_000).toFixed(1) + "M"
       : v >= 1_000 ? (v / 1_000).toFixed(0) + "K"
       : Math.round(v).toString();
-  return <span ref={ref}>{format(val)}{suffix}</span>;
+  return <span ref={ref}>{prefix}{format(val)}{suffix}</span>;
 }
 
 const STATS = [
@@ -288,7 +288,7 @@ const STATS = [
   { value: 80, suffix: "+", label: "Brands managed" },
   { value: 1500, suffix: "+", label: "Campaigns launched" },
   { value: 320_000_000, suffix: "+", label: "Content views" },
-  { value: 98, suffix: "%", label: "Client satisfaction" },
+  { value: 98, suffix: "%", prefix: "\u00a0 \u00a0", label: "Client satisfaction" },
 ];
 
 function Stats() {
@@ -299,7 +299,7 @@ function Stats() {
           <Reveal key={s.label} delay={i * 0.08} className="text-center md:text-left">
             <div className="font-display text-5xl font-medium tracking-tight md:text-6xl">
               <span className="text-gradient-gold">
-                <Counter to={s.value} suffix={s.suffix} />
+                <Counter to={s.value} suffix={s.suffix} prefix={s.prefix} />
               </span>
             </div>
             <div className="mt-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.label}</div>
