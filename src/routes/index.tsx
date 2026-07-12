@@ -760,7 +760,7 @@ function CTA() {
         <Reveal>
           <div className="noise relative isolate overflow-hidden rounded-[2rem] border border-border bg-surface p-12 text-center md:p-24">
             <div aria-hidden className="absolute inset-0 -z-10"
-              style={{ background: "radial-gradient(60% 70% at 50% 0%, rgba(222,189,135,0.20), transparent 60%)" }} />
+              style={{ background: "radial-gradient(60% 70% at 50% 0%, rgba(255,255,255,0.18), transparent 60%)" }} />
             <SectionLabel>Let's build</SectionLabel>
             <h2 className="mt-8 text-5xl font-medium leading-[1] tracking-tight md:text-8xl">
               Ready to build<br />
