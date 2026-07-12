@@ -45,7 +45,7 @@ function MagneticButton({
 
   const base = "group relative inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium transition-colors will-change-transform";
   const styles = variant === "primary"
-    ? "bg-gradient-gold text-primary-foreground shadow-[0_10px_40px_-10px_rgba(222,189,135,0.45)] hover:shadow-[0_20px_60px_-10px_rgba(222,189,135,0.6)]"
+    ? "bg-gradient-gold text-primary-foreground shadow-[0_10px_40px_-10px_rgba(255,255,255,0.35)] hover:shadow-[0_20px_60px_-10px_rgba(255,255,255,0.55)]"
     : "border border-border bg-surface/40 text-foreground backdrop-blur-md hover:bg-surface";
 
   return (
