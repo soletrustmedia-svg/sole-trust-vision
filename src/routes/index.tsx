@@ -154,7 +154,7 @@ function Hero() {
       {/* bg image */}
       <motion.div style={{ y: yImg, scale }} className="absolute inset-0 -z-10">
         <img src={heroBg} alt="" width={1920} height={1280}
-          className="h-full w-full object-cover opacity-60" />
+          className="h-full w-full object-cover opacity-60 grayscale" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
       </motion.div>
 
