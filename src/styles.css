@@ -71,7 +71,7 @@
   --input: oklch(0.28 0 0);
   --ring: oklch(1 0 0);
 
-  --gradient-gold: linear-gradient(135deg, oklch(0.55 0 0) 0%, oklch(1 0 0) 50%, oklch(0.70 0 0) 100%);
+  --gradient-gold: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #D4D4D4 100%);
   --gradient-radial-gold: radial-gradient(60% 60% at 50% 0%, color-mix(in oklab, oklch(1 0 0) 18%, transparent), transparent 70%);
   --gradient-text-gold: linear-gradient(120deg, oklch(1 0 0) 0%, oklch(0.72 0 0) 45%, oklch(1 0 0) 100%);
 }
