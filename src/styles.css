@@ -105,8 +105,8 @@
     font-weight: 600;
   }
   ::selection {
-    background: color-mix(in oklab, #3B6FA0 65%, transparent);
-    color: #FFFFFF;
+    background: color-mix(in oklab, oklch(1 0 0) 65%, transparent);
+    color: #050505;
   }
 
 }
