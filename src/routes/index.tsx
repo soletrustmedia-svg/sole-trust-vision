@@ -395,7 +395,7 @@ function Ecosystem() {
           {ECOSYSTEM.map((card, i) => (
             <Reveal key={card.name} delay={i * 0.1}>
               <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-surface p-10 transition-all duration-500 hover:border-gold/40">
-                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(222,189,135,0.18),transparent)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.15),transparent)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
                 <div className="flex items-center justify-between">
                   <span className="rounded-full border border-border px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{card.tag}</span>
                   <span className="h-2 w-2 rounded-full bg-gold/60" />
