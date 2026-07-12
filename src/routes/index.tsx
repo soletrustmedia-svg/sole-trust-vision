@@ -120,7 +120,7 @@ function Nav() {
           scrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)]" : "bg-transparent"
         }`}>
           <a href="#top" className="flex items-center">
-            <img src={stmLogo.url} alt="Sole Trust Media" className="h-10 w-auto object-contain" />
+            <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain" />
           </a>
           <nav className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
