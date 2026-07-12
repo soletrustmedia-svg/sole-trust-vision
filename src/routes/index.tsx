@@ -285,7 +285,7 @@ function Counter({ to, suffix = "", prefix = "" }: { to: number; suffix?: string
 
 const STATS = [
   { value: 20, suffix: "+", label: "Projects delivered" },
-  { value: 80, suffix: "+", label: "Brands managed" },
+  { value: 18, suffix: "+", label: "Brands managed" },
   { value: 1500, suffix: "+", label: "Campaigns launched" },
   { value: 44_400_000, suffix: "+", label: "Content views" },
   { value: 98, suffix: "%", prefix: "\u00a0 \u00a0", label: "Client satisfaction" },
