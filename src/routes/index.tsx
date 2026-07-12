@@ -160,8 +160,8 @@ function Hero() {
 
       {/* floating gradient orbs */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="animate-float absolute -top-32 left-1/4 h-[520px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(222,189,135,0.18),transparent)] blur-3xl" />
-        <div className="animate-float absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(closest-side,rgba(244,227,178,0.10),transparent)] blur-3xl [animation-delay:-3s]" />
+        <div className="animate-float absolute -top-32 left-1/4 h-[520px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.15),transparent)] blur-3xl" />
+        <div className="animate-float absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.08),transparent)] blur-3xl [animation-delay:-3s]" />
       </div>
 
       <motion.div style={{ y, opacity }} className="mx-auto max-w-7xl px-6">
