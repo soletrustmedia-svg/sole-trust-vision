@@ -347,7 +347,7 @@ function Services() {
             <Reveal key={s.title} delay={(i % 3) * 0.08}>
               <article className="group relative h-full overflow-hidden rounded-3xl border border-border bg-surface p-8 transition-all duration-500 hover:border-gold/40 hover:-translate-y-1">
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: "radial-gradient(80% 100% at 0% 0%, rgba(222,189,135,0.10), transparent 60%)" }} />
+                  style={{ background: "radial-gradient(80% 100% at 0% 0%, rgba(255,255,255,0.08), transparent 60%)" }} />
                 <div className="flex items-start justify-between">
                   <div className="grid h-12 w-12 place-items-center rounded-2xl border border-border bg-background transition-colors group-hover:border-gold/40">
                     <s.icon className="h-5 w-5 text-gold" strokeWidth={1.5} />
