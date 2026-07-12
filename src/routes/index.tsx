@@ -627,7 +627,7 @@ function Clients() {
                 href={c.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block overflow-hidden rounded-3xl border border-border bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_30px_80px_-20px_rgba(222,189,135,0.25)]"
+                className="group relative block overflow-hidden rounded-3xl border border-border bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_30px_80px_-20px_rgba(255,255,255,0.20)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-background">
                   <img
