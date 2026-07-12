@@ -6,7 +6,7 @@ import {
   TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import stmLogo from "@/assets/stm-logo.asset.json";
+import stmLogo from "@/assets/sole-trust-media-logo.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -119,10 +119,8 @@ function Nav() {
         <div className={`flex w-full items-center justify-between rounded-full px-5 py-2.5 transition-all duration-500 ${
           scrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)]" : "bg-transparent"
         }`}>
-          <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-            <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-border"><img src={stmLogo.url} alt="Sole Trust Media" className="h-full w-full object-cover scale-[1.8] translate-x-[-2px]" /></span>
-
-            <span>Sole Trust <span className="text-muted-foreground">Media</span></span>
+          <a href="#top" className="flex items-center">
+            <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain" />
           </a>
           <nav className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
@@ -793,9 +791,8 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-              <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-border"><img src={stmLogo.url} alt="Sole Trust Media" className="h-full w-full object-cover scale-[1.8] translate-x-[-2px]" /></span>
-              Sole Trust Media
+            <div className="flex items-center">
+              <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain" />
             </div>
             <h3 className="mt-8 max-w-xl font-display text-4xl font-medium leading-[1] tracking-tight md:text-6xl">
               Build a brand <span className="italic font-light text-gradient-gold">people remember.</span>
