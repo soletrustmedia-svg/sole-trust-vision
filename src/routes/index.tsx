@@ -45,7 +45,7 @@ function MagneticButton({
 
   const base = "group relative inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium transition-colors will-change-transform";
   const styles = variant === "primary"
-    ? "bg-gradient-gold text-primary-foreground shadow-[0_10px_40px_-10px_rgba(222,189,135,0.45)] hover:shadow-[0_20px_60px_-10px_rgba(222,189,135,0.6)]"
+    ? "bg-gradient-gold text-primary-foreground shadow-[0_10px_40px_-10px_rgba(255,255,255,0.35)] hover:shadow-[0_20px_60px_-10px_rgba(255,255,255,0.55)]"
     : "border border-border bg-surface/40 text-foreground backdrop-blur-md hover:bg-surface";
 
   return (
@@ -154,14 +154,14 @@ function Hero() {
       {/* bg image */}
       <motion.div style={{ y: yImg, scale }} className="absolute inset-0 -z-10">
         <img src={heroBg} alt="" width={1920} height={1280}
-          className="h-full w-full object-cover opacity-60" />
+          className="h-full w-full object-cover opacity-60 grayscale" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
       </motion.div>
 
       {/* floating gradient orbs */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="animate-float absolute -top-32 left-1/4 h-[520px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(222,189,135,0.18),transparent)] blur-3xl" />
-        <div className="animate-float absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(closest-side,rgba(244,227,178,0.10),transparent)] blur-3xl [animation-delay:-3s]" />
+        <div className="animate-float absolute -top-32 left-1/4 h-[520px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.15),transparent)] blur-3xl" />
+        <div className="animate-float absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.08),transparent)] blur-3xl [animation-delay:-3s]" />
       </div>
 
       <motion.div style={{ y, opacity }} className="mx-auto max-w-7xl px-6">
@@ -284,10 +284,10 @@ function Counter({ to, suffix = "", prefix = "" }: { to: number; suffix?: string
 }
 
 const STATS = [
-  { value: 240, suffix: "+", label: "Projects delivered" },
+  { value: 20, suffix: "+", label: "Projects delivered" },
   { value: 80, suffix: "+", label: "Brands managed" },
   { value: 1500, suffix: "+", label: "Campaigns launched" },
-  { value: 320_000_000, suffix: "+", label: "Content views" },
+  { value: 44_400_000, suffix: "+", label: "Content views" },
   { value: 98, suffix: "%", prefix: "\u00a0 \u00a0", label: "Client satisfaction" },
 ];
 
@@ -347,7 +347,7 @@ function Services() {
             <Reveal key={s.title} delay={(i % 3) * 0.08}>
               <article className="group relative h-full overflow-hidden rounded-3xl border border-border bg-surface p-8 transition-all duration-500 hover:border-gold/40 hover:-translate-y-1">
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: "radial-gradient(80% 100% at 0% 0%, rgba(222,189,135,0.10), transparent 60%)" }} />
+                  style={{ background: "radial-gradient(80% 100% at 0% 0%, rgba(255,255,255,0.08), transparent 60%)" }} />
                 <div className="flex items-start justify-between">
                   <div className="grid h-12 w-12 place-items-center rounded-2xl border border-border bg-background transition-colors group-hover:border-gold/40">
                     <s.icon className="h-5 w-5 text-gold" strokeWidth={1.5} />
@@ -395,7 +395,7 @@ function Ecosystem() {
           {ECOSYSTEM.map((card, i) => (
             <Reveal key={card.name} delay={i * 0.1}>
               <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-surface p-10 transition-all duration-500 hover:border-gold/40">
-                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(222,189,135,0.18),transparent)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.15),transparent)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
                 <div className="flex items-center justify-between">
                   <span className="rounded-full border border-border px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{card.tag}</span>
                   <span className="h-2 w-2 rounded-full bg-gold/60" />
@@ -627,7 +627,7 @@ function Clients() {
                 href={c.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block overflow-hidden rounded-3xl border border-border bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_30px_80px_-20px_rgba(222,189,135,0.25)]"
+                className="group relative block overflow-hidden rounded-3xl border border-border bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_30px_80px_-20px_rgba(255,255,255,0.20)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-background">
                   <img
@@ -760,7 +760,7 @@ function CTA() {
         <Reveal>
           <div className="noise relative isolate overflow-hidden rounded-[2rem] border border-border bg-surface p-12 text-center md:p-24">
             <div aria-hidden className="absolute inset-0 -z-10"
-              style={{ background: "radial-gradient(60% 70% at 50% 0%, rgba(222,189,135,0.20), transparent 60%)" }} />
+              style={{ background: "radial-gradient(60% 70% at 50% 0%, rgba(255,255,255,0.18), transparent 60%)" }} />
             <SectionLabel>Let's build</SectionLabel>
             <h2 className="mt-8 text-5xl font-medium leading-[1] tracking-tight md:text-8xl">
               Ready to build<br />
