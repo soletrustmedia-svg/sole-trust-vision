@@ -707,47 +707,8 @@ function Testimonials() {
   );
 }
 
-/* ───────── insights ───────── */
+/* insights section removed */
 
-const POSTS = [
-  { cat: "Branding", title: "The new luxury: quiet, considered, compounding.", read: "6 min read" },
-  { cat: "Marketing", title: "Performance creative is the new performance marketing.", read: "5 min read" },
-  { cat: "AI", title: "What AI changes about how growth teams operate in 2026.", read: "8 min read" },
-  { cat: "Creator economy", title: "Why artists need infrastructure, not just management.", read: "4 min read" },
-  { cat: "SEO", title: "SEO in the age of answer engines.", read: "7 min read" },
-  { cat: "Business growth", title: "The compounding case for long-term partners.", read: "5 min read" },
-];
-
-function Insights() {
-  return (
-    <section id="insights" className="border-t border-border py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <SectionLabel>Insights</SectionLabel>
-          <h2 className="mt-6 max-w-3xl text-5xl font-medium leading-[1] tracking-tight md:text-7xl">
-            Notes on <span className="italic font-light text-gradient-gold">building.</span>
-          </h2>
-        </Reveal>
-        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {POSTS.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 3) * 0.08}>
-              <a href="#" className="group flex h-full flex-col justify-between rounded-3xl border border-border bg-surface p-8 transition-all duration-500 hover:border-gold/30 hover:-translate-y-1">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-[0.2em] text-gold">{p.cat}</span>
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
-                  </div>
-                  <h3 className="mt-10 text-2xl font-medium leading-snug tracking-tight">{p.title}</h3>
-                </div>
-                <div className="mt-12 text-xs text-muted-foreground">{p.read}</div>
-              </a>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ───────── cta ───────── */
 
