@@ -6,7 +6,7 @@ import {
   TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import stmLogo from "@/assets/sole-trust-media-logo.jpg.asset.json";
+import stmLogo from "@/assets/sole-trust-logo.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -120,7 +120,7 @@ function Nav() {
           scrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)]" : "bg-transparent"
         }`}>
           <a href="#top" className="flex items-center">
-            <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain" />
+            <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain invert mix-blend-screen" />
           </a>
           <nav className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
@@ -792,7 +792,7 @@ function Footer() {
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <div className="flex items-center">
-              <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain" />
+              <img src={stmLogo.url} alt="Sole Trust Media" className="h-12 w-auto object-contain invert mix-blend-screen" />
             </div>
             <h3 className="mt-8 max-w-xl font-display text-4xl font-medium leading-[1] tracking-tight md:text-6xl">
               Build a brand <span className="italic font-light text-gradient-gold">people remember.</span>
