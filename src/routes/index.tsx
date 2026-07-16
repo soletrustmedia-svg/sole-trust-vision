@@ -518,7 +518,7 @@ function Work() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <a href="#" className="group hidden items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:inline-flex">
+            <a href="#clients" className="group hidden items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:inline-flex">
               View all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Reveal>
