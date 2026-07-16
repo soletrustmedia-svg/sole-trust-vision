@@ -811,7 +811,6 @@ function Home() {
         <Work />
         <Clients />
         <Testimonials />
-        <Insights />
         <CTA />
       </main>
       <Footer />
