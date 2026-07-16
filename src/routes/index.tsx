@@ -744,8 +744,31 @@ function CTA() {
 
 function Footer() {
   const cols = [
-    { title: "Company", links: ["Services", "Projects", "STM Music Group", "Careers", "Contact"] },
-    { title: "Connect", links: ["Instagram", "LinkedIn", "YouTube", "Email"] },
+    {
+      title: "Company",
+      links: [
+        { label: "Services", href: "#services" },
+        { label: "Work", href: "#work" },
+        { label: "Clients", href: "#clients" },
+        { label: "STM Music Group", href: "#ecosystem" },
+        { label: "Contact", href: "#contact" },
+      ],
+    },
+    {
+      title: "Connect",
+      links: [
+        { label: "Instagram", href: "https://instagram.com/soletrustmedia" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/company/soletrustmedia" },
+        { label: "YouTube", href: "https://youtube.com/@soletrustmedia" },
+        { label: "Email", href: "mailto:hello@soletrustmedia.com" },
+      ],
+    },
+  ];
+  const socials = [
+    { Icon: Instagram, href: "https://instagram.com/soletrustmedia", label: "Instagram" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/company/soletrustmedia", label: "LinkedIn" },
+    { Icon: Youtube, href: "https://youtube.com/@soletrustmedia", label: "YouTube" },
+    { Icon: Mail, href: "mailto:hello@soletrustmedia.com", label: "Email" },
   ];
   return (
     <footer className="border-t border-border bg-surface/30 pt-24">
@@ -759,8 +782,8 @@ function Footer() {
               Build a brand <span className="italic font-light text-gradient-gold">people remember.</span>
             </h3>
             <div className="mt-10 flex gap-3">
-              {[Instagram, Linkedin, Youtube, Mail].map((Icon, i) => (
-                <a key={i} href="#" aria-label="Social link"
+              {socials.map(({ Icon, href, label }) => (
+                <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={label}
                   className="grid h-11 w-11 place-items-center rounded-full border border-border bg-background transition-colors hover:border-gold/40 hover:text-gold">
                   <Icon className="h-4 w-4" strokeWidth={1.5} />
                 </a>
@@ -772,8 +795,8 @@ function Footer() {
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{c.title}</div>
               <ul className="mt-6 space-y-3">
                 {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-base text-foreground/90 transition-colors hover:text-gold">{l}</a>
+                  <li key={l.label}>
+                    <a href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-base text-foreground/90 transition-colors hover:text-gold">{l.label}</a>
                   </li>
                 ))}
               </ul>
