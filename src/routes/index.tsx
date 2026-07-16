@@ -6,7 +6,7 @@ import {
   TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import stmLogo from "@/assets/soletrust-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -105,7 +105,7 @@ function Nav() {
     { label: "Work", href: "#work" },
     { label: "Clients", href: "#clients" },
     { label: "Process", href: "#process" },
-    { label: "Insights", href: "#insights" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -518,7 +518,7 @@ function Work() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <a href="#" className="group hidden items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:inline-flex">
+            <a href="#clients" className="group hidden items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:inline-flex">
               View all <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Reveal>
@@ -707,47 +707,8 @@ function Testimonials() {
   );
 }
 
-/* ───────── insights ───────── */
+/* insights section removed */
 
-const POSTS = [
-  { cat: "Branding", title: "The new luxury: quiet, considered, compounding.", read: "6 min read" },
-  { cat: "Marketing", title: "Performance creative is the new performance marketing.", read: "5 min read" },
-  { cat: "AI", title: "What AI changes about how growth teams operate in 2026.", read: "8 min read" },
-  { cat: "Creator economy", title: "Why artists need infrastructure, not just management.", read: "4 min read" },
-  { cat: "SEO", title: "SEO in the age of answer engines.", read: "7 min read" },
-  { cat: "Business growth", title: "The compounding case for long-term partners.", read: "5 min read" },
-];
-
-function Insights() {
-  return (
-    <section id="insights" className="border-t border-border py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <SectionLabel>Insights</SectionLabel>
-          <h2 className="mt-6 max-w-3xl text-5xl font-medium leading-[1] tracking-tight md:text-7xl">
-            Notes on <span className="italic font-light text-gradient-gold">building.</span>
-          </h2>
-        </Reveal>
-        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {POSTS.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 3) * 0.08}>
-              <a href="#" className="group flex h-full flex-col justify-between rounded-3xl border border-border bg-surface p-8 transition-all duration-500 hover:border-gold/30 hover:-translate-y-1">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-[0.2em] text-gold">{p.cat}</span>
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
-                  </div>
-                  <h3 className="mt-10 text-2xl font-medium leading-snug tracking-tight">{p.title}</h3>
-                </div>
-                <div className="mt-12 text-xs text-muted-foreground">{p.read}</div>
-              </a>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ───────── cta ───────── */
 
@@ -783,8 +744,31 @@ function CTA() {
 
 function Footer() {
   const cols = [
-    { title: "Company", links: ["Services", "Projects", "STM Music Group", "Careers", "Contact"] },
-    { title: "Connect", links: ["Instagram", "LinkedIn", "YouTube", "Email"] },
+    {
+      title: "Company",
+      links: [
+        { label: "Services", href: "#services" },
+        { label: "Work", href: "#work" },
+        { label: "Clients", href: "#clients" },
+        { label: "STM Music Group", href: "#ecosystem" },
+        { label: "Contact", href: "#contact" },
+      ],
+    },
+    {
+      title: "Connect",
+      links: [
+        { label: "Instagram", href: "https://instagram.com/soletrustmedia" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/company/soletrustmedia" },
+        { label: "YouTube", href: "https://youtube.com/@soletrustmedia" },
+        { label: "Email", href: "mailto:hello@soletrustmedia.com" },
+      ],
+    },
+  ];
+  const socials = [
+    { Icon: Instagram, href: "https://instagram.com/soletrustmedia", label: "Instagram" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/company/soletrustmedia", label: "LinkedIn" },
+    { Icon: Youtube, href: "https://youtube.com/@soletrustmedia", label: "YouTube" },
+    { Icon: Mail, href: "mailto:hello@soletrustmedia.com", label: "Email" },
   ];
   return (
     <footer className="border-t border-border bg-surface/30 pt-24">
@@ -798,8 +782,8 @@ function Footer() {
               Build a brand <span className="italic font-light text-gradient-gold">people remember.</span>
             </h3>
             <div className="mt-10 flex gap-3">
-              {[Instagram, Linkedin, Youtube, Mail].map((Icon, i) => (
-                <a key={i} href="#" aria-label="Social link"
+              {socials.map(({ Icon, href, label }) => (
+                <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={label}
                   className="grid h-11 w-11 place-items-center rounded-full border border-border bg-background transition-colors hover:border-gold/40 hover:text-gold">
                   <Icon className="h-4 w-4" strokeWidth={1.5} />
                 </a>
@@ -811,8 +795,8 @@ function Footer() {
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{c.title}</div>
               <ul className="mt-6 space-y-3">
                 {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-base text-foreground/90 transition-colors hover:text-gold">{l}</a>
+                  <li key={l.label}>
+                    <a href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-base text-foreground/90 transition-colors hover:text-gold">{l.label}</a>
                   </li>
                 ))}
               </ul>
@@ -850,7 +834,6 @@ function Home() {
         <Work />
         <Clients />
         <Testimonials />
-        <Insights />
         <CTA />
       </main>
       <Footer />
