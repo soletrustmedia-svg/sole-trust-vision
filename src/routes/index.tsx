@@ -6,7 +6,7 @@ import {
   TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import stmLogo from "@/assets/soletrust-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
