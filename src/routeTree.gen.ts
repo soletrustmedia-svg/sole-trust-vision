@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StmMusicGroupRouteImport } from './routes/stm-music-group'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as IndexRouteImport } from './routes/index'
 
+const StmMusicGroupRoute = StmMusicGroupRouteImport.update({
+  id: '/stm-music-group',
+  path: '/stm-music-group',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/stm-music-group': typeof StmMusicGroupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/stm-music-group': typeof StmMusicGroupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/stm-music-group': typeof StmMusicGroupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects' | '/services'
+  fullPaths: '/' | '/projects' | '/services' | '/stm-music-group'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects' | '/services'
-  id: '__root__' | '/' | '/projects' | '/services'
+  to: '/' | '/projects' | '/services' | '/stm-music-group'
+  id: '__root__' | '/' | '/projects' | '/services' | '/stm-music-group'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  StmMusicGroupRoute: typeof StmMusicGroupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/stm-music-group': {
+      id: '/stm-music-group'
+      path: '/stm-music-group'
+      fullPath: '/stm-music-group'
+      preLoaderRoute: typeof StmMusicGroupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  StmMusicGroupRoute: StmMusicGroupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
