@@ -47,12 +47,10 @@ export const Route = createFileRoute("/")({
           description: HOME_DESC,
           sameAs: [
             "https://www.instagram.com/soletrustmedia",
-            "https://www.linkedin.com/company/soletrustmedia",
-            "https://www.youtube.com/@soletrustmedia",
           ],
           contactPoint: [{
             "@type": "ContactPoint",
-            email: "hello@soletrustmedia.com",
+            email: "soletrustmedia@gmail.com",
             contactType: "customer support",
           }],
         }),
