@@ -9,13 +9,64 @@ import heroBg from "@/assets/hero-bg.jpg";
 import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
 
 
+const HOME_TITLE = "Sole Trust Media — Branding, Marketing, Tech & Talent Growth Partner";
+const HOME_DESC = "Sole Trust Media is a modern growth company partnering with ambitious brands, startups, artists and creators across branding, marketing, technology, and talent management.";
+const HOME_KEYWORDS = "branding agency, marketing agency, performance marketing, social media management, creative studio, web development, SEO, artist management, creator management, Sole Trust Media, STM Music Group";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sole Trust Media — We Build Businesses That People Remember" },
-      { name: "description", content: "From branding and marketing to technology and talent management, we partner with ambitious businesses and creators to build brands that last." },
-      { property: "og:title", content: "Sole Trust Media — We Build Businesses That People Remember" },
-      { property: "og:description", content: "A modern growth company for brands, startups, artists and creators." },
+      { title: HOME_TITLE },
+      { name: "description", content: HOME_DESC },
+      { name: "keywords", content: HOME_KEYWORDS },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: HOME_TITLE },
+      { property: "og:description", content: HOME_DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:site_name", content: "Sole Trust Media" },
+      { property: "og:image", content: stmLogo.url },
+      { property: "og:image:alt", content: "Sole Trust Media" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@soletrustmedia" },
+      { name: "twitter:creator", content: "@soletrustmedia" },
+      { name: "twitter:title", content: HOME_TITLE },
+      { name: "twitter:description", content: HOME_DESC },
+      { name: "twitter:image", content: stmLogo.url },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Sole Trust Media",
+          url: "/",
+          logo: stmLogo.url,
+          description: HOME_DESC,
+          sameAs: [
+            "https://www.instagram.com/soletrustmedia",
+            "https://www.linkedin.com/company/soletrustmedia",
+            "https://www.youtube.com/@soletrustmedia",
+          ],
+          contactPoint: [{
+            "@type": "ContactPoint",
+            email: "hello@soletrustmedia.com",
+            contactType: "customer support",
+          }],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Sole Trust Media",
+          url: "/",
+          description: HOME_DESC,
+        }),
+      },
     ],
   }),
   component: Home,
