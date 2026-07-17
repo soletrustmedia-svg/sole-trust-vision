@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as StmMusicGroupRouteImport } from './routes/stm-music-group'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as IndexRouteImport } from './routes/index'
 
 const StmMusicGroupRoute = StmMusicGroupRouteImport.update({
@@ -29,6 +30,11 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/stm-music-group': typeof StmMusicGroupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/stm-music-group': typeof StmMusicGroupRoute
@@ -50,20 +58,28 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/stm-music-group': typeof StmMusicGroupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects' | '/services' | '/stm-music-group'
+  fullPaths: '/' | '/careers' | '/projects' | '/services' | '/stm-music-group'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects' | '/services' | '/stm-music-group'
-  id: '__root__' | '/' | '/projects' | '/services' | '/stm-music-group'
+  to: '/' | '/careers' | '/projects' | '/services' | '/stm-music-group'
+  id:
+    | '__root__'
+    | '/'
+    | '/careers'
+    | '/projects'
+    | '/services'
+    | '/stm-music-group'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CareersRoute: typeof CareersRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   StmMusicGroupRoute: typeof StmMusicGroupRoute
@@ -92,6 +108,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +127,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CareersRoute: CareersRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   StmMusicGroupRoute: StmMusicGroupRoute,
