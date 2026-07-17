@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring, 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowUpRight, ArrowRight, Sparkles, Palette, Camera, Megaphone,
-  TrendingUp, Code, Search, Music, Check, Mail, Instagram, Linkedin, Youtube, ExternalLink,
+  TrendingUp, Code, Search, Music, Check, Mail, Instagram, ExternalLink,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
@@ -47,12 +47,10 @@ export const Route = createFileRoute("/")({
           description: HOME_DESC,
           sameAs: [
             "https://www.instagram.com/soletrustmedia",
-            "https://www.linkedin.com/company/soletrustmedia",
-            "https://www.youtube.com/@soletrustmedia",
           ],
           contactPoint: [{
             "@type": "ContactPoint",
-            email: "hello@soletrustmedia.com",
+            email: "soletrustmedia@gmail.com",
             contactType: "customer support",
           }],
         }),
@@ -798,28 +796,26 @@ function Footer() {
     {
       title: "Company",
       links: [
-        { label: "Services", href: "#services" },
-        { label: "Work", href: "#work" },
-        { label: "Clients", href: "#clients" },
-        { label: "STM Music Group", href: "#ecosystem" },
-        { label: "Contact", href: "#contact" },
+        { label: "Services", href: "/services" },
+        { label: "Projects", href: "/projects" },
+        { label: "STM Music Group", href: "/stm-music-group" },
+        { label: "Careers", href: "/careers" },
+        { label: "Contact", href: "/contact" },
       ],
     },
     {
       title: "Connect",
       links: [
         { label: "Instagram", href: "https://instagram.com/soletrustmedia" },
-        { label: "LinkedIn", href: "https://www.linkedin.com/company/soletrustmedia" },
-        { label: "YouTube", href: "https://youtube.com/@soletrustmedia" },
-        { label: "Email", href: "mailto:hello@soletrustmedia.com" },
+        { label: "Email", href: "mailto:soletrustmedia@gmail.com" },
+        { label: "Privacy", href: "/privacy" },
+        { label: "Terms", href: "/terms" },
       ],
     },
   ];
   const socials = [
     { Icon: Instagram, href: "https://instagram.com/soletrustmedia", label: "Instagram" },
-    { Icon: Linkedin, href: "https://www.linkedin.com/company/soletrustmedia", label: "LinkedIn" },
-    { Icon: Youtube, href: "https://youtube.com/@soletrustmedia", label: "YouTube" },
-    { Icon: Mail, href: "mailto:hello@soletrustmedia.com", label: "Email" },
+    { Icon: Mail, href: "mailto:soletrustmedia@gmail.com", label: "Email" },
   ];
   return (
     <footer className="border-t border-border bg-surface/30 pt-24">
@@ -858,8 +854,8 @@ function Footer() {
         <div className="flex flex-col items-start justify-between gap-4 py-8 text-xs text-muted-foreground md:flex-row md:items-center">
           <div>© {new Date().getFullYear()} Sole Trust Media. All rights reserved.</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
+            <a href="/privacy" className="hover:text-foreground">Privacy</a>
+            <a href="/terms" className="hover:text-foreground">Terms</a>
           </div>
         </div>
       </div>
